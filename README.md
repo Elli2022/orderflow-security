@@ -108,4 +108,5 @@ orderflow-security/
 
 Portfolio project for Cloud Security Architect positioning.
 
+**Repository:** https://github.com/Elli2022/orderflow-security  
 **Status:** Reference architecture — documentation complete, infrastructure deployable.

@@ -32,7 +32,7 @@ Teknik: Terraform, Lambda, DynamoDB, EventBridge, Cognito JWT, CloudTrail
 
 AWS Certified Security – Specialty (pågår)
 
-GitHub: [länk]
+GitHub: https://github.com/Elli2022/orderflow-security
 ```
 
 ---
@@ -44,7 +44,7 @@ GitHub: [länk]
 **Beskrivning:**
 Architecture case study for an event-driven order platform on AWS. Demonstrates threat modeling (STRIDE), zero trust network design, encryption governance with per-domain KMS keys, detective controls (GuardDuty, Security Hub), and documented incident response procedures. Built for Cloud Security Architect roles — documentation-first, minimal reference implementation.
 
-**Länk:** [länk]
+**Länk:** https://github.com/Elli2022/orderflow-security
 
 ---
 
@@ -62,7 +62,7 @@ Cloud Security Portfolio Project | AWS eu-north-1
 
 Stack: AWS (Lambda, API Gateway, DynamoDB, EventBridge, SQS, WAF, CloudTrail,
        GuardDuty, Security Hub, Cognito, KMS, Secrets Manager), Terraform, Python
-GitHub: [länk]
+GitHub: https://github.com/Elli2022/orderflow-security
 ```
 
 ---
@@ -111,7 +111,7 @@ Vad det visar:
 
 Byggt för Cloud Security Architect-roller.
 
-Repo: [länk]
+Repo: https://github.com/Elli2022/orderflow-security
 
 #CloudSecurity #AWS #ZeroTrust
 ```
