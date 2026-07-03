@@ -42,11 +42,13 @@ jobs:
     name: Terraform Plan (AWS)
     needs: validate
     runs-on: ubuntu-latest
-    # Only run when AWS secrets are configured in the repository
-    if: ${{ secrets.AWS_ACCESS_KEY_ID != '' && secrets.AWS_SECRET_ACCESS_KEY != '' }}
     defaults:
       run:
         working-directory: infra/terraform/environments/dev
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: eu-north-1
 
     steps:
       - uses: actions/checkout@v4
@@ -55,12 +57,16 @@ jobs:
         with:
           terraform_version: "1.9.8"
 
+      - name: Skip plan without AWS credentials
+        if: env.AWS_ACCESS_KEY_ID == ''
+        run: |
+          echo "Skipping terraform plan — add AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY to GitHub Secrets to enable."
+          echo "See docs/portfolio/deploy-guide.md"
+
       - name: Terraform Init
+        if: env.AWS_ACCESS_KEY_ID != ''
         run: terraform init -backend=false
 
       - name: Terraform Plan
+        if: env.AWS_ACCESS_KEY_ID != ''
         run: terraform plan -input=false -no-color
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: eu-north-1
