@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OrderCreated",
+  "description": "Published when a new order is created. No PII — SEC-010.",
+  "type": "object",
+  "required": ["eventId", "orderId", "customerId", "status", "correlationId", "timestamp"],
+  "properties": {
+    "eventId": {
+      "type": "string",
+      "pattern": "^evt_[a-z0-9]{12}$"
+    },
+    "orderId": {
+      "type": "string",
+      "pattern": "^ord_[a-z0-9]{12}$"
+    },
+    "customerId": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["PENDING", "PAYMENT_PENDING", "CONFIRMED", "FAILED"]
+    },
+    "correlationId": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}

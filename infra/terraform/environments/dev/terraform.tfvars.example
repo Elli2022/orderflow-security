@@ -1,0 +1,6 @@
+aws_region   = "eu-north-1"
+environment  = "dev"
+project_name = "orderflow"
+
+# Optional: receive security alarm emails
+# alert_email = "you@example.com"
