@@ -1,6 +1,6 @@
 # LinkedIn & CV — OrderFlow Security
 
-Kopiera och anpassa. Ersätt `[länk]` med ditt GitHub-repo efter push.
+Kopiera och anpassa. Repo: https://github.com/Elli2022/orderflow-security
 
 ---
 
